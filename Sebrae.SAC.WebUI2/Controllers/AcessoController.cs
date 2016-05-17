@@ -33,7 +33,7 @@ namespace Sebrae.SAC.WebUI2.Controllers
             if (ModelState.IsValid)
             {
                 string msgErro = String.Empty;
-                if (!autenticacaoProvider.Autenticar(autenticacaoModel, out msgErro))
+                if (autenticacaoProvider.Autenticar(autenticacaoModel, out msgErro))
                 {
                     if (String.IsNullOrEmpty(msgErro)) {
                         FormsAuthentication.SetAuthCookie(autenticacaoModel.Login, false);
