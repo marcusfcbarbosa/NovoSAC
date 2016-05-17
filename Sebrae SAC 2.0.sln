@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sebrae.SAC.Domain", "Sebrae.SAC.Domain\Sebrae.SAC.Domain.csproj", "{BD3EC390-8B73-4582-88EB-7A00F8E4A126}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sebrae.SAC.Services", "Sebrae.SAC.Services\Sebrae.SAC.Services.csproj", "{A913FACE-12E2-43F5-8A75-E25D3C0A0BA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sebrae.SAC.Tests", "Sebrae.SAC.Tests\Sebrae.SAC.Tests.csproj", "{F437BBF1-D5EE-491A-BE38-EBD93543A9B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sebrae.SAC.WebUI2", "Sebrae.SAC.WebUI2\Sebrae.SAC.WebUI2.csproj", "{3A3414DA-F6A3-4CF9-9892-6A17C3026AB6}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://spsvtfs03:8080/tfs/sistemascollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Sebrae.SAC.Domain\\Sebrae.SAC.Domain.csproj
+		SccProjectName1 = Sebrae.SAC.Domain
+		SccLocalPath1 = Sebrae.SAC.Domain
+		SccProjectUniqueName2 = Sebrae.SAC.Services\\Sebrae.SAC.Services.csproj
+		SccProjectName2 = Sebrae.SAC.Services
+		SccLocalPath2 = Sebrae.SAC.Services
+		SccProjectUniqueName3 = Sebrae.SAC.Tests\\Sebrae.SAC.Tests.csproj
+		SccProjectName3 = Sebrae.SAC.Tests
+		SccLocalPath3 = Sebrae.SAC.Tests
+		SccProjectUniqueName4 = Sebrae.SAC.WebUI2\\Sebrae.SAC.WebUI2.csproj
+		SccProjectName4 = Sebrae.SAC.WebUI2
+		SccLocalPath4 = Sebrae.SAC.WebUI2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD3EC390-8B73-4582-88EB-7A00F8E4A126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD3EC390-8B73-4582-88EB-7A00F8E4A126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD3EC390-8B73-4582-88EB-7A00F8E4A126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD3EC390-8B73-4582-88EB-7A00F8E4A126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A913FACE-12E2-43F5-8A75-E25D3C0A0BA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A913FACE-12E2-43F5-8A75-E25D3C0A0BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A913FACE-12E2-43F5-8A75-E25D3C0A0BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A913FACE-12E2-43F5-8A75-E25D3C0A0BA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F437BBF1-D5EE-491A-BE38-EBD93543A9B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F437BBF1-D5EE-491A-BE38-EBD93543A9B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F437BBF1-D5EE-491A-BE38-EBD93543A9B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F437BBF1-D5EE-491A-BE38-EBD93543A9B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A3414DA-F6A3-4CF9-9892-6A17C3026AB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A3414DA-F6A3-4CF9-9892-6A17C3026AB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A3414DA-F6A3-4CF9-9892-6A17C3026AB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A3414DA-F6A3-4CF9-9892-6A17C3026AB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

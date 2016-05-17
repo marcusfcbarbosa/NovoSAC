@@ -1,0 +1,65 @@
+﻿
+<!-- BEGIN MENUBAR-->
+<div id="menubar" class="menubar-inverse">
+
+    <div class="menubar-scroll-panel">
+        <!-- BEGIN MAIN MENU -->
+        <ul id="main-menu" class="gui-controls">
+
+            <!-- BEGIN HOME -->
+            <li>
+                <a href="#" class="active">
+                    <div class="gui-icon"><i class="md md-home"></i></div>
+                    <span class="title">Página Inicial</span>
+                </a>
+            </li><!--end /menu-li -->
+            <!-- END HOME -->
+            <!-- BEGIN CADASTRO -->
+            <li class="gui-folder">
+                <a>
+                    <div class="gui-icon"><i class="md md-create"></i></div>
+                    <span class="title">Cadastro</span>
+                </a>
+                <!--start submenu -->
+                <ul>
+                    <li><a href="@Url.Action("PesquisaCliente", "Cadastro")"><span class="title">Cliente</span></a></li>
+                    <li><a href="@Url.Action("PesquisaLocais", "Cadastro")"><span class="title">Locais</span></a></li>
+                </ul><!--end /submenu -->
+            </li><!--end /menu-li -->
+            <!-- END CADASTRO -->
+            <!-- BEGIN ATENDIMENTO -->
+            <li class="gui-folder">
+                <a>
+                    <div class="gui-icon"><i class="md md-perm-identity"></i></div>
+                    <span class="title">Atendimento</span>
+                </a>
+                <!--start submenu -->
+                <ul>
+                    <li><a href="#"><span class="title">Orientação Técnica/ Informação</span></a></li>
+                    <li><a href="#"><span class="title">Consultoria</span></a></li>
+                </ul><!--end /submenu -->
+            </li><!--end /menu-li -->
+            <!-- END ATENDIMENTO -->
+            <!-- BEGIN AGENDAMENTO -->
+            <li class="gui-folder">
+                <a>
+                    <div class="gui-icon"><i class="md md-insert-invitation"></i></div>
+                    <span class="title">Agendamento</span>
+                </a>
+                <!--start submenu -->
+                <ul>
+                    <li><a href="#"><span class="title">Turmas</span></a></li>
+                </ul>
+            </li><!--end /menu-li -->
+            <!-- END AGENDAMENTO -->
+        </ul><!--end .main-menu -->
+        <!-- END MAIN MENU -->
+        <div class="menubar-foot-panel">
+            <small class="no-linebreak hidden-folded">
+                <span class="opacity-75">&copy; @DateTime.Now.Year - Sebrae SP</span>
+                <img src="@Url.Content("~/Content/img/img_logo.png")" alt="" />
+            </small>
+        </div>
+    </div><!--end .menubar-scroll-panel-->
+</div><!--end #menubar-->
+<!-- END MENUBAR -->

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SiacNetModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Parceiro">
+          <Key>
+            <PropertyRef Name="CodParceiro" />
+          </Key>
+          <Property Name="CodParceiro" Type="int" Nullable="false" />
+          <Property Name="TipoParceiro" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="NomeRazaoSocial" Type="varchar" MaxLength="120" />
+          <Property Name="NomeAbrevFantasia" Type="varchar" MaxLength="80" />
+          <Property Name="CgcCpf" Type="numeric" Precision="15" Scale="0" />
+          <Property Name="IndAtu" Type="varchar" MaxLength="3" />
+          <Property Name="DataInc" Type="smalldatetime" Nullable="false" />
+          <Property Name="DataAtu" Type="smalldatetime" Nullable="false" />
+          <Property Name="CodUnidOperInc" Type="int" />
+          <Property Name="CodUnidOperAtu" Type="int" />
+          <Property Name="ControleRede" Type="smallint" />
+          <Property Name="Tipo" Type="int" />
+          <Property Name="IndAtualizacao" Type="smallint" />
+          <Property Name="CodSebrae" Type="int" Nullable="false" />
+          <Property Name="CodResponsavel" Type="int" />
+          <Property Name="ReceberInfoSEBRAE" Type="char" MaxLength="1" />
+          <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Situacao" Type="int" Nullable="false" />
+          <Property Name="CodCRM" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityContainer Name="SiacNetModelStoreContainer">
+          <EntitySet Name="Parceiro" EntityType="Self.Parceiro" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SiacNetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Parceiro">
+          <Key>
+            <PropertyRef Name="CodParceiro" />
+          </Key>
+          <Property Name="CodParceiro" Type="Int32" Nullable="false" />
+          <Property Name="TipoParceiro" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NomeRazaoSocial" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="NomeAbrevFantasia" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="CgcCpf" Type="Decimal" Precision="15" Scale="0" />
+          <Property Name="IndAtu" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="DataInc" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DataAtu" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="CodUnidOperInc" Type="Int32" />
+          <Property Name="CodUnidOperAtu" Type="Int32" />
+          <Property Name="ControleRede" Type="Int16" />
+          <Property Name="Tipo" Type="Int32" />
+          <Property Name="IndAtualizacao" Type="Int16" />
+          <Property Name="CodSebrae" Type="Int32" Nullable="false" />
+          <Property Name="CodResponsavel" Type="Int32" />
+          <Property Name="ReceberInfoSEBRAE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="rowguid" Type="Guid" Nullable="false" />
+          <Property Name="Situacao" Type="Int32" Nullable="false" />
+          <Property Name="CodCRM" Type="Guid" />
+        </EntityType>
+        <EntityContainer Name="SacAntigo" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Parceiro" EntityType="Self.Parceiro" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SiacNetModelStoreContainer" CdmEntityContainer="SacAntigo">
+          <EntitySetMapping Name="Parceiro">
+            <EntityTypeMapping TypeName="SiacNetModel.Parceiro">
+              <MappingFragment StoreEntitySet="Parceiro">
+                <ScalarProperty Name="CodParceiro" ColumnName="CodParceiro" />
+                <ScalarProperty Name="TipoParceiro" ColumnName="TipoParceiro" />
+                <ScalarProperty Name="NomeRazaoSocial" ColumnName="NomeRazaoSocial" />
+                <ScalarProperty Name="NomeAbrevFantasia" ColumnName="NomeAbrevFantasia" />
+                <ScalarProperty Name="CgcCpf" ColumnName="CgcCpf" />
+                <ScalarProperty Name="IndAtu" ColumnName="IndAtu" />
+                <ScalarProperty Name="DataInc" ColumnName="DataInc" />
+                <ScalarProperty Name="DataAtu" ColumnName="DataAtu" />
+                <ScalarProperty Name="CodUnidOperInc" ColumnName="CodUnidOperInc" />
+                <ScalarProperty Name="CodUnidOperAtu" ColumnName="CodUnidOperAtu" />
+                <ScalarProperty Name="ControleRede" ColumnName="ControleRede" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="IndAtualizacao" ColumnName="IndAtualizacao" />
+                <ScalarProperty Name="CodSebrae" ColumnName="CodSebrae" />
+                <ScalarProperty Name="CodResponsavel" ColumnName="CodResponsavel" />
+                <ScalarProperty Name="ReceberInfoSEBRAE" ColumnName="ReceberInfoSEBRAE" />
+                <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+                <ScalarProperty Name="Situacao" ColumnName="Situacao" />
+                <ScalarProperty Name="CodCRM" ColumnName="CodCRM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

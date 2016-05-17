@@ -1,0 +1,38 @@
+﻿
+
+ <!-- BEGIN HEADER-->
+<header id="header">
+    <div class="headerbar">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="headerbar-left">
+            <ul class="header-nav header-nav-options">
+                <li class="header-nav-brand">
+                    <div class="brand-holder">
+                        <span class="text-lg text-bold text-primary profile-info">Novo Atendimento</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="headerbar-right">
+            <ul class="header-nav header-nav-profile">
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
+                        <img src="@Url.Content("~/Content/img/img_avatar.jpg")" alt="" />
+                        <span class="profile-info">
+                            Fabio Henrique
+                            <small>ER. Capital Centro</small>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu animation-dock">
+                        <li class="dropdown-header">Conta</li>
+                        <li><a href="#">Meu perfil</a></li>
+                        <li class="divider"></li>
+                        <li> @Html.ActionLink("Logout", "Login", new { @class = "fa fa-fw fa-power-off text-danger" })</li>
+                    </ul><!--end .dropdown-menu -->
+                </li><!--end .dropdown -->
+            </ul><!--end .header-nav-profile -->
+        </div><!--end #header-navbar-collapse -->
+    </div>
+</header>
+<!-- END HEADER-->

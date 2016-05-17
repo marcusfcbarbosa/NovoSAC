@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SiacNetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Parceiro">
+    <Key>
+      <PropertyRef Name="CodParceiro" />
+    </Key>
+    <Property Name="CodParceiro" Type="Int32" Nullable="false" />
+    <Property Name="TipoParceiro" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NomeRazaoSocial" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="NomeAbrevFantasia" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="CgcCpf" Type="Decimal" Precision="15" Scale="0" />
+    <Property Name="IndAtu" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="DataInc" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DataAtu" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CodUnidOperInc" Type="Int32" />
+    <Property Name="CodUnidOperAtu" Type="Int32" />
+    <Property Name="ControleRede" Type="Int16" />
+    <Property Name="Tipo" Type="Int32" />
+    <Property Name="IndAtualizacao" Type="Int16" />
+    <Property Name="CodSebrae" Type="Int32" Nullable="false" />
+    <Property Name="CodResponsavel" Type="Int32" />
+    <Property Name="ReceberInfoSEBRAE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="rowguid" Type="Guid" Nullable="false" />
+    <Property Name="Situacao" Type="Int32" Nullable="false" />
+    <Property Name="CodCRM" Type="Guid" />
+  </EntityType>
+  <EntityContainer Name="SacAntigo" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Parceiro" EntityType="Self.Parceiro" />
+  </EntityContainer>
+</Schema>

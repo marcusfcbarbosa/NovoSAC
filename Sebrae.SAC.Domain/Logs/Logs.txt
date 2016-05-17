@@ -1,0 +1,4 @@
+﻿14:41:43,991 [c:\inetpub\wwwroot\Sebrae SAC 2.0\Sebrae.SAC.Domain\Concrete\EFUsuarioRepositorio.cs] ERROR - (AutenticaUsuario)  : teste teste erro errro
+14:41:44,017 [c:\inetpub\wwwroot\Sebrae SAC 2.0\Sebrae.SAC.Domain\Concrete\EFUsuarioRepositorio.cs] INFO - (AutenticaUsuario)  : teste teste erro errro
+14:41:44,020 [c:\inetpub\wwwroot\Sebrae SAC 2.0\Sebrae.SAC.Domain\Concrete\EFUsuarioRepositorio.cs] INFO - (AutenticaUsuario)  : teste teste erro errro
+14:41:44,026 [c:\inetpub\wwwroot\Sebrae SAC 2.0\Sebrae.SAC.Domain\Concrete\EFUsuarioRepositorio.cs] WARN - (AutenticaUsuario)  : teste teste erro errro

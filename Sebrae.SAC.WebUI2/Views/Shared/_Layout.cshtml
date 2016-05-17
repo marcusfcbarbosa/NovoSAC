@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/css")
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/form")
+</head>
+<body class="menubar-hoverable header-fixed ">
+    @Html.Partial("_HeaderPartial")
+   
+    <!-- BEGIN BASE-->
+    <div id="base">
+        @RenderBody()
+        @Html.Partial("_MenuPartial")
+    </div><!--end #base-->
+    <!-- END BASE -->
+
+    @Scripts.Render("~/bundles/libs")
+    @Scripts.Render("~/bundles/core")
+    @Scripts.Render("~/bundles/form")
+</body>
+</html>

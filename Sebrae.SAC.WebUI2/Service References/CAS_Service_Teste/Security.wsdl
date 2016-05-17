@@ -1,0 +1,2789 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Criptografar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CriptografarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CriptografarResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ResultadoExecucaoRetornoEstrutura">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Data" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Resultado" type="tns:TiposResultadoExecucao" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mensagem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Retorno" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="TiposResultadoExecucao">
+        <s:restriction base="s:string">
+          <s:enumeration value="ExecucaoCompleta" />
+          <s:enumeration value="ErroValidacao" />
+          <s:enumeration value="ErroExecucao" />
+          <s:enumeration value="ErroRetornoBD" />
+          <s:enumeration value="ErroAutorizacao" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfXmlPermissaoInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="XmlPermissaoInfo" nillable="true" type="tns:XmlPermissaoInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="XmlPermissaoInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="IdPermissao" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Permissao" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="XmlPermissao" type="tns:ArrayOfXmlPermissaoInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="XmlUsuarioEstruturaInternaInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idEstrutura" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="XmlUsuarioEstruturaInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="idLocalPai" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="XmlUsuarioInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdPessoa" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CPF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdLocalTrabalho" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Codigo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdSituacao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tipo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocalTrabalho" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Situacao" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocaisUsuario" type="tns:ArrayOfXmlLocalInfo" />
+          <s:element minOccurs="0" maxOccurs="1" name="GruposUsuario" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfXmlLocalInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="XmlLocalInfo" nillable="true" type="tns:XmlLocalInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="XmlLocalInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdLocal" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descricao" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdLocalTipo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescricaoTipo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfXmlUsuarioInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="XmlUsuarioInfo" nillable="true" type="tns:XmlUsuarioInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfXmlUsuarioEstruturaInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="XmlUsuarioEstruturaInfo" nillable="true" type="tns:XmlUsuarioEstruturaInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfXmlUsuarioEstruturaInternaInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="XmlUsuarioEstruturaInternaInfo" nillable="true" type="tns:XmlUsuarioEstruturaInternaInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ValidationSoapHeader" type="tns:ValidationSoapHeader" />
+      <s:complexType name="ValidationSoapHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="InserirLocalUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPessoa" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idLocal" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirLocalUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InserirLocalUsuarioResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Descriptografar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DescriptografarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DescriptografarResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterarSenha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="identificador" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="novaSenha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterarSenhaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AlterarSenhaResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cpf" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idPessoa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AlterarUsuarioResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutorizarEstrutura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nomeEstrutura" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutorizarEstruturaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AutorizarEstruturaResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutorizarGrupo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nomeGrupo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sistema" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutorizarGrupoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AutorizarGrupoResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornarEstrutura">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="permissao" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornarEstruturaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RetornarEstruturaResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BloquearUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="login" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BloquearUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BloquearUsuarioResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExcluirUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="identificador" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExcluirUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExcluirUsuarioResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GerarNovaSenha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="identificador" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GerarNovaSenhaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GerarNovaSenhaResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="codigo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cpf" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InserirUsuarioResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirUsuarioParceiro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idPessoa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idLocal" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirUsuarioParceiroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InserirUsuarioParceiroResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterarUsuarioParceiro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPessoa" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idLocal" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlterarUsuarioParceiroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AlterarUsuarioParceiroResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Autenticar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="identificador" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AutenticarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AutenticarResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornarGrupo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="grupo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sistema" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornarGrupoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RetornarGrupoResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sistema" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetUserInfoResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLocaisUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IdPessoa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLocaisUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetLocaisUsuarioResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cpf" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsUserResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificaSenha">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cpf" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="senha" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IdSituacao" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerificaSenhaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerificaSenhaResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarUsuariosPorLocal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idLocal" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarUsuariosPorLocalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ListarUsuariosPorLocalResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarUsuariosPorGrupo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="grupo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sistema" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarUsuariosPorGrupoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ListarUsuariosPorGrupoResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarUsuariosPorLocalTrabalho">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idLocal" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarUsuariosPorLocalTrabalhoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ListarUsuariosPorLocalTrabalhoResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarEstruturasExternasUsuarioPorIdPessoa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPessoa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarEstruturasExternasUsuarioPorIdPessoaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ListarEstruturasExternasUsuarioPorIdPessoaResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarEstruturasInternasUsuarioPorIdPessoa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPessoa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarEstruturasInternasUsuarioPorIdPessoaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ListarEstruturasInternasUsuarioPorIdPessoaResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirUsuarioGrupo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPessoa" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idGrupo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InserirUsuarioGrupoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InserirUsuarioGrupoResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelecionarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPessoa" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelecionarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SelecionarUsuarioResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelecionarUsuarioPorIdUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idUsuario" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelecionarUsuarioPorIdUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SelecionarUsuarioPorIdUsuarioResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarLoginDisponivel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarLoginDisponivelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ListarLoginDisponivelResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarPermissaoUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPessoa" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idGrupo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarPermissaoUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ListarPermissaoUsuarioResult" type="tns:ResultadoExecucaoRetornoEstrutura" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResultadoExecucaoRetornoEstrutura" type="tns:ResultadoExecucaoRetornoEstrutura" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CriptografarSoapIn">
+    <wsdl:part name="parameters" element="tns:Criptografar" />
+  </wsdl:message>
+  <wsdl:message name="CriptografarSoapOut">
+    <wsdl:part name="parameters" element="tns:CriptografarResponse" />
+  </wsdl:message>
+  <wsdl:message name="CriptografarValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="InserirLocalUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:InserirLocalUsuario" />
+  </wsdl:message>
+  <wsdl:message name="InserirLocalUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:InserirLocalUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="InserirLocalUsuarioValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="DescriptografarSoapIn">
+    <wsdl:part name="parameters" element="tns:Descriptografar" />
+  </wsdl:message>
+  <wsdl:message name="DescriptografarSoapOut">
+    <wsdl:part name="parameters" element="tns:DescriptografarResponse" />
+  </wsdl:message>
+  <wsdl:message name="DescriptografarValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="AlterarSenhaSoapIn">
+    <wsdl:part name="parameters" element="tns:AlterarSenha" />
+  </wsdl:message>
+  <wsdl:message name="AlterarSenhaSoapOut">
+    <wsdl:part name="parameters" element="tns:AlterarSenhaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlterarSenhaValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="AlterarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:AlterarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="AlterarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:AlterarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlterarUsuarioValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarEstruturaSoapIn">
+    <wsdl:part name="parameters" element="tns:AutorizarEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarEstruturaSoapOut">
+    <wsdl:part name="parameters" element="tns:AutorizarEstruturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarEstruturaValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarGrupoSoapIn">
+    <wsdl:part name="parameters" element="tns:AutorizarGrupo" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarGrupoSoapOut">
+    <wsdl:part name="parameters" element="tns:AutorizarGrupoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarGrupoValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="RetornarEstruturaSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornarEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="RetornarEstruturaSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornarEstruturaResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornarEstruturaValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="BloquearUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:BloquearUsuario" />
+  </wsdl:message>
+  <wsdl:message name="BloquearUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:BloquearUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="BloquearUsuarioValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ExcluirUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ExcluirUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ExcluirUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ExcluirUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExcluirUsuarioValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GerarNovaSenhaSoapIn">
+    <wsdl:part name="parameters" element="tns:GerarNovaSenha" />
+  </wsdl:message>
+  <wsdl:message name="GerarNovaSenhaSoapOut">
+    <wsdl:part name="parameters" element="tns:GerarNovaSenhaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GerarNovaSenhaValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:InserirUsuario" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:InserirUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioParceiroSoapIn">
+    <wsdl:part name="parameters" element="tns:InserirUsuarioParceiro" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioParceiroSoapOut">
+    <wsdl:part name="parameters" element="tns:InserirUsuarioParceiroResponse" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioParceiroValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="AlterarUsuarioParceiroSoapIn">
+    <wsdl:part name="parameters" element="tns:AlterarUsuarioParceiro" />
+  </wsdl:message>
+  <wsdl:message name="AlterarUsuarioParceiroSoapOut">
+    <wsdl:part name="parameters" element="tns:AlterarUsuarioParceiroResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlterarUsuarioParceiroValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="AutenticarSoapIn">
+    <wsdl:part name="parameters" element="tns:Autenticar" />
+  </wsdl:message>
+  <wsdl:message name="AutenticarSoapOut">
+    <wsdl:part name="parameters" element="tns:AutenticarResponse" />
+  </wsdl:message>
+  <wsdl:message name="AutenticarValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="RetornarGrupoSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornarGrupo" />
+  </wsdl:message>
+  <wsdl:message name="RetornarGrupoSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornarGrupoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornarGrupoValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetLocaisUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLocaisUsuario" />
+  </wsdl:message>
+  <wsdl:message name="GetLocaisUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLocaisUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLocaisUsuarioValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="IsUserSoapIn">
+    <wsdl:part name="parameters" element="tns:IsUser" />
+  </wsdl:message>
+  <wsdl:message name="IsUserSoapOut">
+    <wsdl:part name="parameters" element="tns:IsUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsUserValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="VerificaSenhaSoapIn">
+    <wsdl:part name="parameters" element="tns:VerificaSenha" />
+  </wsdl:message>
+  <wsdl:message name="VerificaSenhaSoapOut">
+    <wsdl:part name="parameters" element="tns:VerificaSenhaResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerificaSenhaValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorLocalSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarUsuariosPorLocal" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorLocalSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarUsuariosPorLocalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorLocalValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorGrupoSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarUsuariosPorGrupo" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorGrupoSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarUsuariosPorGrupoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorGrupoValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorLocalTrabalhoSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarUsuariosPorLocalTrabalho" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorLocalTrabalhoSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarUsuariosPorLocalTrabalhoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorLocalTrabalhoValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListarEstruturasExternasUsuarioPorIdPessoaSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarEstruturasExternasUsuarioPorIdPessoa" />
+  </wsdl:message>
+  <wsdl:message name="ListarEstruturasExternasUsuarioPorIdPessoaSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarEstruturasExternasUsuarioPorIdPessoaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarEstruturasExternasUsuarioPorIdPessoaValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListarEstruturasInternasUsuarioPorIdPessoaSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarEstruturasInternasUsuarioPorIdPessoa" />
+  </wsdl:message>
+  <wsdl:message name="ListarEstruturasInternasUsuarioPorIdPessoaSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarEstruturasInternasUsuarioPorIdPessoaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarEstruturasInternasUsuarioPorIdPessoaValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioGrupoSoapIn">
+    <wsdl:part name="parameters" element="tns:InserirUsuarioGrupo" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioGrupoSoapOut">
+    <wsdl:part name="parameters" element="tns:InserirUsuarioGrupoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioGrupoValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="SelecionarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:SelecionarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="SelecionarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:SelecionarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelecionarUsuarioValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="SelecionarUsuarioPorIdUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:SelecionarUsuarioPorIdUsuario" />
+  </wsdl:message>
+  <wsdl:message name="SelecionarUsuarioPorIdUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:SelecionarUsuarioPorIdUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelecionarUsuarioPorIdUsuarioValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListarLoginDisponivelSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarLoginDisponivel" />
+  </wsdl:message>
+  <wsdl:message name="ListarLoginDisponivelSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarLoginDisponivelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarLoginDisponivelValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="ListarPermissaoUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarPermissaoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="ListarPermissaoUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarPermissaoUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarPermissaoUsuarioValidationSoapHeader">
+    <wsdl:part name="ValidationSoapHeader" element="tns:ValidationSoapHeader" />
+  </wsdl:message>
+  <wsdl:message name="CriptografarHttpGetIn">
+    <wsdl:part name="valor" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CriptografarHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="InserirLocalUsuarioHttpGetIn">
+    <wsdl:part name="idPessoa" type="s:string" />
+    <wsdl:part name="idLocal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InserirLocalUsuarioHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="DescriptografarHttpGetIn">
+    <wsdl:part name="valor" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DescriptografarHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="AlterarSenhaHttpGetIn">
+    <wsdl:part name="identificador" type="s:string" />
+    <wsdl:part name="senha" type="s:string" />
+    <wsdl:part name="novaSenha" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AlterarSenhaHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="AlterarUsuarioHttpGetIn">
+    <wsdl:part name="codigo" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="cpf" type="s:string" />
+    <wsdl:part name="nome" type="s:string" />
+    <wsdl:part name="idPessoa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AlterarUsuarioHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarEstruturaHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="nomeEstrutura" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarEstruturaHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarGrupoHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="nomeGrupo" type="s:string" />
+    <wsdl:part name="sistema" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarGrupoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="RetornarEstruturaHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="permissao" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RetornarEstruturaHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="BloquearUsuarioHttpGetIn">
+    <wsdl:part name="login" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BloquearUsuarioHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="ExcluirUsuarioHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="identificador" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluirUsuarioHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="GerarNovaSenhaHttpGetIn">
+    <wsdl:part name="identificador" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GerarNovaSenhaHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioHttpGetIn">
+    <wsdl:part name="codigo" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="cpf" type="s:string" />
+    <wsdl:part name="nome" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioParceiroHttpGetIn">
+    <wsdl:part name="codigo" type="s:string" />
+    <wsdl:part name="idPessoa" type="s:string" />
+    <wsdl:part name="usuario" type="s:string" />
+    <wsdl:part name="senha" type="s:string" />
+    <wsdl:part name="idLocal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioParceiroHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="AlterarUsuarioParceiroHttpGetIn">
+    <wsdl:part name="idPessoa" type="s:string" />
+    <wsdl:part name="usuario" type="s:string" />
+    <wsdl:part name="idLocal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AlterarUsuarioParceiroHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="AutenticarHttpGetIn">
+    <wsdl:part name="identificador" type="s:string" />
+    <wsdl:part name="senha" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AutenticarHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="RetornarGrupoHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="grupo" type="s:string" />
+    <wsdl:part name="sistema" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RetornarGrupoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="Sistema" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="GetLocaisUsuarioHttpGetIn">
+    <wsdl:part name="IdPessoa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLocaisUsuarioHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="IsUserHttpGetIn">
+    <wsdl:part name="cpf" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IsUserHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="VerificaSenhaHttpGetIn">
+    <wsdl:part name="cpf" type="s:string" />
+    <wsdl:part name="senha" type="s:string" />
+    <wsdl:part name="IdSituacao" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VerificaSenhaHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorLocalHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="idLocal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorLocalHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorGrupoHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="grupo" type="s:string" />
+    <wsdl:part name="sistema" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorGrupoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorLocalTrabalhoHttpGetIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="idLocal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorLocalTrabalhoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="ListarEstruturasExternasUsuarioPorIdPessoaHttpGetIn">
+    <wsdl:part name="idPessoa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListarEstruturasExternasUsuarioPorIdPessoaHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="ListarEstruturasInternasUsuarioPorIdPessoaHttpGetIn">
+    <wsdl:part name="idPessoa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListarEstruturasInternasUsuarioPorIdPessoaHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioGrupoHttpGetIn">
+    <wsdl:part name="idPessoa" type="s:string" />
+    <wsdl:part name="idGrupo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioGrupoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="SelecionarUsuarioHttpGetIn">
+    <wsdl:part name="idPessoa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SelecionarUsuarioHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="SelecionarUsuarioPorIdUsuarioHttpGetIn">
+    <wsdl:part name="idUsuario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SelecionarUsuarioPorIdUsuarioHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="ListarLoginDisponivelHttpGetIn">
+    <wsdl:part name="usuario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListarLoginDisponivelHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="ListarPermissaoUsuarioHttpGetIn">
+    <wsdl:part name="idPessoa" type="s:string" />
+    <wsdl:part name="idGrupo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListarPermissaoUsuarioHttpGetOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="CriptografarHttpPostIn">
+    <wsdl:part name="valor" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CriptografarHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="InserirLocalUsuarioHttpPostIn">
+    <wsdl:part name="idPessoa" type="s:string" />
+    <wsdl:part name="idLocal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InserirLocalUsuarioHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="DescriptografarHttpPostIn">
+    <wsdl:part name="valor" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DescriptografarHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="AlterarSenhaHttpPostIn">
+    <wsdl:part name="identificador" type="s:string" />
+    <wsdl:part name="senha" type="s:string" />
+    <wsdl:part name="novaSenha" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AlterarSenhaHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="AlterarUsuarioHttpPostIn">
+    <wsdl:part name="codigo" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="cpf" type="s:string" />
+    <wsdl:part name="nome" type="s:string" />
+    <wsdl:part name="idPessoa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AlterarUsuarioHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarEstruturaHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="nomeEstrutura" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarEstruturaHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarGrupoHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="nomeGrupo" type="s:string" />
+    <wsdl:part name="sistema" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AutorizarGrupoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="RetornarEstruturaHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="permissao" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RetornarEstruturaHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="BloquearUsuarioHttpPostIn">
+    <wsdl:part name="login" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BloquearUsuarioHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="ExcluirUsuarioHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="identificador" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ExcluirUsuarioHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="GerarNovaSenhaHttpPostIn">
+    <wsdl:part name="identificador" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GerarNovaSenhaHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioHttpPostIn">
+    <wsdl:part name="codigo" type="s:string" />
+    <wsdl:part name="email" type="s:string" />
+    <wsdl:part name="cpf" type="s:string" />
+    <wsdl:part name="nome" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioParceiroHttpPostIn">
+    <wsdl:part name="codigo" type="s:string" />
+    <wsdl:part name="idPessoa" type="s:string" />
+    <wsdl:part name="usuario" type="s:string" />
+    <wsdl:part name="senha" type="s:string" />
+    <wsdl:part name="idLocal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioParceiroHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="AlterarUsuarioParceiroHttpPostIn">
+    <wsdl:part name="idPessoa" type="s:string" />
+    <wsdl:part name="usuario" type="s:string" />
+    <wsdl:part name="idLocal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AlterarUsuarioParceiroHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="AutenticarHttpPostIn">
+    <wsdl:part name="identificador" type="s:string" />
+    <wsdl:part name="senha" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AutenticarHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="RetornarGrupoHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="grupo" type="s:string" />
+    <wsdl:part name="sistema" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RetornarGrupoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="Sistema" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="GetLocaisUsuarioHttpPostIn">
+    <wsdl:part name="IdPessoa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLocaisUsuarioHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="IsUserHttpPostIn">
+    <wsdl:part name="cpf" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IsUserHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="VerificaSenhaHttpPostIn">
+    <wsdl:part name="cpf" type="s:string" />
+    <wsdl:part name="senha" type="s:string" />
+    <wsdl:part name="IdSituacao" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VerificaSenhaHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorLocalHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="idLocal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorLocalHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorGrupoHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="grupo" type="s:string" />
+    <wsdl:part name="sistema" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorGrupoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorLocalTrabalhoHttpPostIn">
+    <wsdl:part name="token" type="s:string" />
+    <wsdl:part name="idLocal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListarUsuariosPorLocalTrabalhoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="ListarEstruturasExternasUsuarioPorIdPessoaHttpPostIn">
+    <wsdl:part name="idPessoa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListarEstruturasExternasUsuarioPorIdPessoaHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="ListarEstruturasInternasUsuarioPorIdPessoaHttpPostIn">
+    <wsdl:part name="idPessoa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListarEstruturasInternasUsuarioPorIdPessoaHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioGrupoHttpPostIn">
+    <wsdl:part name="idPessoa" type="s:string" />
+    <wsdl:part name="idGrupo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InserirUsuarioGrupoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="SelecionarUsuarioHttpPostIn">
+    <wsdl:part name="idPessoa" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SelecionarUsuarioHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="SelecionarUsuarioPorIdUsuarioHttpPostIn">
+    <wsdl:part name="idUsuario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SelecionarUsuarioPorIdUsuarioHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="ListarLoginDisponivelHttpPostIn">
+    <wsdl:part name="usuario" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListarLoginDisponivelHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:message name="ListarPermissaoUsuarioHttpPostIn">
+    <wsdl:part name="idPessoa" type="s:string" />
+    <wsdl:part name="idGrupo" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ListarPermissaoUsuarioHttpPostOut">
+    <wsdl:part name="Body" element="tns:ResultadoExecucaoRetornoEstrutura" />
+  </wsdl:message>
+  <wsdl:portType name="SecuritySoap">
+    <wsdl:operation name="Criptografar">
+      <wsdl:input message="tns:CriptografarSoapIn" />
+      <wsdl:output message="tns:CriptografarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirLocalUsuario">
+      <wsdl:input message="tns:InserirLocalUsuarioSoapIn" />
+      <wsdl:output message="tns:InserirLocalUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Descriptografar">
+      <wsdl:input message="tns:DescriptografarSoapIn" />
+      <wsdl:output message="tns:DescriptografarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenha">
+      <wsdl:input message="tns:AlterarSenhaSoapIn" />
+      <wsdl:output message="tns:AlterarSenhaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarUsuario">
+      <wsdl:input message="tns:AlterarUsuarioSoapIn" />
+      <wsdl:output message="tns:AlterarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarEstrutura">
+      <wsdl:input message="tns:AutorizarEstruturaSoapIn" />
+      <wsdl:output message="tns:AutorizarEstruturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarGrupo">
+      <wsdl:input message="tns:AutorizarGrupoSoapIn" />
+      <wsdl:output message="tns:AutorizarGrupoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarEstrutura">
+      <wsdl:input message="tns:RetornarEstruturaSoapIn" />
+      <wsdl:output message="tns:RetornarEstruturaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BloquearUsuario">
+      <wsdl:input message="tns:BloquearUsuarioSoapIn" />
+      <wsdl:output message="tns:BloquearUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirUsuario">
+      <wsdl:input message="tns:ExcluirUsuarioSoapIn" />
+      <wsdl:output message="tns:ExcluirUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GerarNovaSenha">
+      <wsdl:input message="tns:GerarNovaSenhaSoapIn" />
+      <wsdl:output message="tns:GerarNovaSenhaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuario">
+      <wsdl:input message="tns:InserirUsuarioSoapIn" />
+      <wsdl:output message="tns:InserirUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuarioParceiro">
+      <wsdl:input message="tns:InserirUsuarioParceiroSoapIn" />
+      <wsdl:output message="tns:InserirUsuarioParceiroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarUsuarioParceiro">
+      <wsdl:input message="tns:AlterarUsuarioParceiroSoapIn" />
+      <wsdl:output message="tns:AlterarUsuarioParceiroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Autenticar">
+      <wsdl:input message="tns:AutenticarSoapIn" />
+      <wsdl:output message="tns:AutenticarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarGrupo">
+      <wsdl:input message="tns:RetornarGrupoSoapIn" />
+      <wsdl:output message="tns:RetornarGrupoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input message="tns:GetUserInfoSoapIn" />
+      <wsdl:output message="tns:GetUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocaisUsuario">
+      <wsdl:input message="tns:GetLocaisUsuarioSoapIn" />
+      <wsdl:output message="tns:GetLocaisUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUser">
+      <wsdl:input message="tns:IsUserSoapIn" />
+      <wsdl:output message="tns:IsUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificaSenha">
+      <wsdl:input message="tns:VerificaSenhaSoapIn" />
+      <wsdl:output message="tns:VerificaSenhaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorLocal">
+      <wsdl:input message="tns:ListarUsuariosPorLocalSoapIn" />
+      <wsdl:output message="tns:ListarUsuariosPorLocalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorGrupo">
+      <wsdl:input message="tns:ListarUsuariosPorGrupoSoapIn" />
+      <wsdl:output message="tns:ListarUsuariosPorGrupoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorLocalTrabalho">
+      <wsdl:input message="tns:ListarUsuariosPorLocalTrabalhoSoapIn" />
+      <wsdl:output message="tns:ListarUsuariosPorLocalTrabalhoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstruturasExternasUsuarioPorIdPessoa">
+      <wsdl:input message="tns:ListarEstruturasExternasUsuarioPorIdPessoaSoapIn" />
+      <wsdl:output message="tns:ListarEstruturasExternasUsuarioPorIdPessoaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstruturasInternasUsuarioPorIdPessoa">
+      <wsdl:input message="tns:ListarEstruturasInternasUsuarioPorIdPessoaSoapIn" />
+      <wsdl:output message="tns:ListarEstruturasInternasUsuarioPorIdPessoaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuarioGrupo">
+      <wsdl:input message="tns:InserirUsuarioGrupoSoapIn" />
+      <wsdl:output message="tns:InserirUsuarioGrupoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelecionarUsuario">
+      <wsdl:input message="tns:SelecionarUsuarioSoapIn" />
+      <wsdl:output message="tns:SelecionarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelecionarUsuarioPorIdUsuario">
+      <wsdl:input message="tns:SelecionarUsuarioPorIdUsuarioSoapIn" />
+      <wsdl:output message="tns:SelecionarUsuarioPorIdUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarLoginDisponivel">
+      <wsdl:input message="tns:ListarLoginDisponivelSoapIn" />
+      <wsdl:output message="tns:ListarLoginDisponivelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPermissaoUsuario">
+      <wsdl:input message="tns:ListarPermissaoUsuarioSoapIn" />
+      <wsdl:output message="tns:ListarPermissaoUsuarioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SecurityHttpGet">
+    <wsdl:operation name="Criptografar">
+      <wsdl:input message="tns:CriptografarHttpGetIn" />
+      <wsdl:output message="tns:CriptografarHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirLocalUsuario">
+      <wsdl:input message="tns:InserirLocalUsuarioHttpGetIn" />
+      <wsdl:output message="tns:InserirLocalUsuarioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Descriptografar">
+      <wsdl:input message="tns:DescriptografarHttpGetIn" />
+      <wsdl:output message="tns:DescriptografarHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenha">
+      <wsdl:input message="tns:AlterarSenhaHttpGetIn" />
+      <wsdl:output message="tns:AlterarSenhaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarUsuario">
+      <wsdl:input message="tns:AlterarUsuarioHttpGetIn" />
+      <wsdl:output message="tns:AlterarUsuarioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarEstrutura">
+      <wsdl:input message="tns:AutorizarEstruturaHttpGetIn" />
+      <wsdl:output message="tns:AutorizarEstruturaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarGrupo">
+      <wsdl:input message="tns:AutorizarGrupoHttpGetIn" />
+      <wsdl:output message="tns:AutorizarGrupoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarEstrutura">
+      <wsdl:input message="tns:RetornarEstruturaHttpGetIn" />
+      <wsdl:output message="tns:RetornarEstruturaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BloquearUsuario">
+      <wsdl:input message="tns:BloquearUsuarioHttpGetIn" />
+      <wsdl:output message="tns:BloquearUsuarioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirUsuario">
+      <wsdl:input message="tns:ExcluirUsuarioHttpGetIn" />
+      <wsdl:output message="tns:ExcluirUsuarioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GerarNovaSenha">
+      <wsdl:input message="tns:GerarNovaSenhaHttpGetIn" />
+      <wsdl:output message="tns:GerarNovaSenhaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuario">
+      <wsdl:input message="tns:InserirUsuarioHttpGetIn" />
+      <wsdl:output message="tns:InserirUsuarioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuarioParceiro">
+      <wsdl:input message="tns:InserirUsuarioParceiroHttpGetIn" />
+      <wsdl:output message="tns:InserirUsuarioParceiroHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarUsuarioParceiro">
+      <wsdl:input message="tns:AlterarUsuarioParceiroHttpGetIn" />
+      <wsdl:output message="tns:AlterarUsuarioParceiroHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Autenticar">
+      <wsdl:input message="tns:AutenticarHttpGetIn" />
+      <wsdl:output message="tns:AutenticarHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarGrupo">
+      <wsdl:input message="tns:RetornarGrupoHttpGetIn" />
+      <wsdl:output message="tns:RetornarGrupoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input message="tns:GetUserInfoHttpGetIn" />
+      <wsdl:output message="tns:GetUserInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocaisUsuario">
+      <wsdl:input message="tns:GetLocaisUsuarioHttpGetIn" />
+      <wsdl:output message="tns:GetLocaisUsuarioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUser">
+      <wsdl:input message="tns:IsUserHttpGetIn" />
+      <wsdl:output message="tns:IsUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificaSenha">
+      <wsdl:input message="tns:VerificaSenhaHttpGetIn" />
+      <wsdl:output message="tns:VerificaSenhaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorLocal">
+      <wsdl:input message="tns:ListarUsuariosPorLocalHttpGetIn" />
+      <wsdl:output message="tns:ListarUsuariosPorLocalHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorGrupo">
+      <wsdl:input message="tns:ListarUsuariosPorGrupoHttpGetIn" />
+      <wsdl:output message="tns:ListarUsuariosPorGrupoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorLocalTrabalho">
+      <wsdl:input message="tns:ListarUsuariosPorLocalTrabalhoHttpGetIn" />
+      <wsdl:output message="tns:ListarUsuariosPorLocalTrabalhoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstruturasExternasUsuarioPorIdPessoa">
+      <wsdl:input message="tns:ListarEstruturasExternasUsuarioPorIdPessoaHttpGetIn" />
+      <wsdl:output message="tns:ListarEstruturasExternasUsuarioPorIdPessoaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstruturasInternasUsuarioPorIdPessoa">
+      <wsdl:input message="tns:ListarEstruturasInternasUsuarioPorIdPessoaHttpGetIn" />
+      <wsdl:output message="tns:ListarEstruturasInternasUsuarioPorIdPessoaHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuarioGrupo">
+      <wsdl:input message="tns:InserirUsuarioGrupoHttpGetIn" />
+      <wsdl:output message="tns:InserirUsuarioGrupoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelecionarUsuario">
+      <wsdl:input message="tns:SelecionarUsuarioHttpGetIn" />
+      <wsdl:output message="tns:SelecionarUsuarioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelecionarUsuarioPorIdUsuario">
+      <wsdl:input message="tns:SelecionarUsuarioPorIdUsuarioHttpGetIn" />
+      <wsdl:output message="tns:SelecionarUsuarioPorIdUsuarioHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarLoginDisponivel">
+      <wsdl:input message="tns:ListarLoginDisponivelHttpGetIn" />
+      <wsdl:output message="tns:ListarLoginDisponivelHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPermissaoUsuario">
+      <wsdl:input message="tns:ListarPermissaoUsuarioHttpGetIn" />
+      <wsdl:output message="tns:ListarPermissaoUsuarioHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SecurityHttpPost">
+    <wsdl:operation name="Criptografar">
+      <wsdl:input message="tns:CriptografarHttpPostIn" />
+      <wsdl:output message="tns:CriptografarHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirLocalUsuario">
+      <wsdl:input message="tns:InserirLocalUsuarioHttpPostIn" />
+      <wsdl:output message="tns:InserirLocalUsuarioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Descriptografar">
+      <wsdl:input message="tns:DescriptografarHttpPostIn" />
+      <wsdl:output message="tns:DescriptografarHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenha">
+      <wsdl:input message="tns:AlterarSenhaHttpPostIn" />
+      <wsdl:output message="tns:AlterarSenhaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarUsuario">
+      <wsdl:input message="tns:AlterarUsuarioHttpPostIn" />
+      <wsdl:output message="tns:AlterarUsuarioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarEstrutura">
+      <wsdl:input message="tns:AutorizarEstruturaHttpPostIn" />
+      <wsdl:output message="tns:AutorizarEstruturaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarGrupo">
+      <wsdl:input message="tns:AutorizarGrupoHttpPostIn" />
+      <wsdl:output message="tns:AutorizarGrupoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarEstrutura">
+      <wsdl:input message="tns:RetornarEstruturaHttpPostIn" />
+      <wsdl:output message="tns:RetornarEstruturaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BloquearUsuario">
+      <wsdl:input message="tns:BloquearUsuarioHttpPostIn" />
+      <wsdl:output message="tns:BloquearUsuarioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirUsuario">
+      <wsdl:input message="tns:ExcluirUsuarioHttpPostIn" />
+      <wsdl:output message="tns:ExcluirUsuarioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GerarNovaSenha">
+      <wsdl:input message="tns:GerarNovaSenhaHttpPostIn" />
+      <wsdl:output message="tns:GerarNovaSenhaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuario">
+      <wsdl:input message="tns:InserirUsuarioHttpPostIn" />
+      <wsdl:output message="tns:InserirUsuarioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuarioParceiro">
+      <wsdl:input message="tns:InserirUsuarioParceiroHttpPostIn" />
+      <wsdl:output message="tns:InserirUsuarioParceiroHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarUsuarioParceiro">
+      <wsdl:input message="tns:AlterarUsuarioParceiroHttpPostIn" />
+      <wsdl:output message="tns:AlterarUsuarioParceiroHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Autenticar">
+      <wsdl:input message="tns:AutenticarHttpPostIn" />
+      <wsdl:output message="tns:AutenticarHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarGrupo">
+      <wsdl:input message="tns:RetornarGrupoHttpPostIn" />
+      <wsdl:output message="tns:RetornarGrupoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input message="tns:GetUserInfoHttpPostIn" />
+      <wsdl:output message="tns:GetUserInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocaisUsuario">
+      <wsdl:input message="tns:GetLocaisUsuarioHttpPostIn" />
+      <wsdl:output message="tns:GetLocaisUsuarioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUser">
+      <wsdl:input message="tns:IsUserHttpPostIn" />
+      <wsdl:output message="tns:IsUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerificaSenha">
+      <wsdl:input message="tns:VerificaSenhaHttpPostIn" />
+      <wsdl:output message="tns:VerificaSenhaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorLocal">
+      <wsdl:input message="tns:ListarUsuariosPorLocalHttpPostIn" />
+      <wsdl:output message="tns:ListarUsuariosPorLocalHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorGrupo">
+      <wsdl:input message="tns:ListarUsuariosPorGrupoHttpPostIn" />
+      <wsdl:output message="tns:ListarUsuariosPorGrupoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorLocalTrabalho">
+      <wsdl:input message="tns:ListarUsuariosPorLocalTrabalhoHttpPostIn" />
+      <wsdl:output message="tns:ListarUsuariosPorLocalTrabalhoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstruturasExternasUsuarioPorIdPessoa">
+      <wsdl:input message="tns:ListarEstruturasExternasUsuarioPorIdPessoaHttpPostIn" />
+      <wsdl:output message="tns:ListarEstruturasExternasUsuarioPorIdPessoaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstruturasInternasUsuarioPorIdPessoa">
+      <wsdl:input message="tns:ListarEstruturasInternasUsuarioPorIdPessoaHttpPostIn" />
+      <wsdl:output message="tns:ListarEstruturasInternasUsuarioPorIdPessoaHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuarioGrupo">
+      <wsdl:input message="tns:InserirUsuarioGrupoHttpPostIn" />
+      <wsdl:output message="tns:InserirUsuarioGrupoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelecionarUsuario">
+      <wsdl:input message="tns:SelecionarUsuarioHttpPostIn" />
+      <wsdl:output message="tns:SelecionarUsuarioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelecionarUsuarioPorIdUsuario">
+      <wsdl:input message="tns:SelecionarUsuarioPorIdUsuarioHttpPostIn" />
+      <wsdl:output message="tns:SelecionarUsuarioPorIdUsuarioHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarLoginDisponivel">
+      <wsdl:input message="tns:ListarLoginDisponivelHttpPostIn" />
+      <wsdl:output message="tns:ListarLoginDisponivelHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarPermissaoUsuario">
+      <wsdl:input message="tns:ListarPermissaoUsuarioHttpPostIn" />
+      <wsdl:output message="tns:ListarPermissaoUsuarioHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SecuritySoap" type="tns:SecuritySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Criptografar">
+      <soap:operation soapAction="http://tempuri.org/Criptografar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CriptografarValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirLocalUsuario">
+      <soap:operation soapAction="http://tempuri.org/InserirLocalUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InserirLocalUsuarioValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Descriptografar">
+      <soap:operation soapAction="http://tempuri.org/Descriptografar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DescriptografarValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenha">
+      <soap:operation soapAction="http://tempuri.org/AlterarSenha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AlterarSenhaValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarUsuario">
+      <soap:operation soapAction="http://tempuri.org/AlterarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AlterarUsuarioValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarEstrutura">
+      <soap:operation soapAction="http://tempuri.org/AutorizarEstrutura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AutorizarEstruturaValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarGrupo">
+      <soap:operation soapAction="http://tempuri.org/AutorizarGrupo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AutorizarGrupoValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarEstrutura">
+      <soap:operation soapAction="http://tempuri.org/RetornarEstrutura" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RetornarEstruturaValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BloquearUsuario">
+      <soap:operation soapAction="http://tempuri.org/BloquearUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BloquearUsuarioValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirUsuario">
+      <soap:operation soapAction="http://tempuri.org/ExcluirUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ExcluirUsuarioValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GerarNovaSenha">
+      <soap:operation soapAction="http://tempuri.org/GerarNovaSenha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GerarNovaSenhaValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuario">
+      <soap:operation soapAction="http://tempuri.org/InserirUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InserirUsuarioValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuarioParceiro">
+      <soap:operation soapAction="http://tempuri.org/InserirUsuarioParceiro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InserirUsuarioParceiroValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarUsuarioParceiro">
+      <soap:operation soapAction="http://tempuri.org/AlterarUsuarioParceiro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AlterarUsuarioParceiroValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Autenticar">
+      <soap:operation soapAction="http://tempuri.org/Autenticar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AutenticarValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarGrupo">
+      <soap:operation soapAction="http://tempuri.org/RetornarGrupo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RetornarGrupoValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap:operation soapAction="http://tempuri.org/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUserInfoValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocaisUsuario">
+      <soap:operation soapAction="http://tempuri.org/GetLocaisUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLocaisUsuarioValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUser">
+      <soap:operation soapAction="http://tempuri.org/IsUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:IsUserValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaSenha">
+      <soap:operation soapAction="http://tempuri.org/VerificaSenha" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:VerificaSenhaValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorLocal">
+      <soap:operation soapAction="http://tempuri.org/ListarUsuariosPorLocal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListarUsuariosPorLocalValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorGrupo">
+      <soap:operation soapAction="http://tempuri.org/ListarUsuariosPorGrupo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListarUsuariosPorGrupoValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorLocalTrabalho">
+      <soap:operation soapAction="http://tempuri.org/ListarUsuariosPorLocalTrabalho" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListarUsuariosPorLocalTrabalhoValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstruturasExternasUsuarioPorIdPessoa">
+      <soap:operation soapAction="http://tempuri.org/ListarEstruturasExternasUsuarioPorIdPessoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListarEstruturasExternasUsuarioPorIdPessoaValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstruturasInternasUsuarioPorIdPessoa">
+      <soap:operation soapAction="http://tempuri.org/ListarEstruturasInternasUsuarioPorIdPessoa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListarEstruturasInternasUsuarioPorIdPessoaValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuarioGrupo">
+      <soap:operation soapAction="http://tempuri.org/InserirUsuarioGrupo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InserirUsuarioGrupoValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelecionarUsuario">
+      <soap:operation soapAction="http://tempuri.org/SelecionarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SelecionarUsuarioValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelecionarUsuarioPorIdUsuario">
+      <soap:operation soapAction="http://tempuri.org/SelecionarUsuarioPorIdUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SelecionarUsuarioPorIdUsuarioValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarLoginDisponivel">
+      <soap:operation soapAction="http://tempuri.org/ListarLoginDisponivel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListarLoginDisponivelValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPermissaoUsuario">
+      <soap:operation soapAction="http://tempuri.org/ListarPermissaoUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ListarPermissaoUsuarioValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SecuritySoap12" type="tns:SecuritySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Criptografar">
+      <soap12:operation soapAction="http://tempuri.org/Criptografar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CriptografarValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirLocalUsuario">
+      <soap12:operation soapAction="http://tempuri.org/InserirLocalUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:InserirLocalUsuarioValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Descriptografar">
+      <soap12:operation soapAction="http://tempuri.org/Descriptografar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DescriptografarValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenha">
+      <soap12:operation soapAction="http://tempuri.org/AlterarSenha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AlterarSenhaValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/AlterarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AlterarUsuarioValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarEstrutura">
+      <soap12:operation soapAction="http://tempuri.org/AutorizarEstrutura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AutorizarEstruturaValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarGrupo">
+      <soap12:operation soapAction="http://tempuri.org/AutorizarGrupo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AutorizarGrupoValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarEstrutura">
+      <soap12:operation soapAction="http://tempuri.org/RetornarEstrutura" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RetornarEstruturaValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BloquearUsuario">
+      <soap12:operation soapAction="http://tempuri.org/BloquearUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:BloquearUsuarioValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirUsuario">
+      <soap12:operation soapAction="http://tempuri.org/ExcluirUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ExcluirUsuarioValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GerarNovaSenha">
+      <soap12:operation soapAction="http://tempuri.org/GerarNovaSenha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GerarNovaSenhaValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuario">
+      <soap12:operation soapAction="http://tempuri.org/InserirUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:InserirUsuarioValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuarioParceiro">
+      <soap12:operation soapAction="http://tempuri.org/InserirUsuarioParceiro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:InserirUsuarioParceiroValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarUsuarioParceiro">
+      <soap12:operation soapAction="http://tempuri.org/AlterarUsuarioParceiro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AlterarUsuarioParceiroValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Autenticar">
+      <soap12:operation soapAction="http://tempuri.org/Autenticar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AutenticarValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarGrupo">
+      <soap12:operation soapAction="http://tempuri.org/RetornarGrupo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RetornarGrupoValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetUserInfoValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocaisUsuario">
+      <soap12:operation soapAction="http://tempuri.org/GetLocaisUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLocaisUsuarioValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUser">
+      <soap12:operation soapAction="http://tempuri.org/IsUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:IsUserValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaSenha">
+      <soap12:operation soapAction="http://tempuri.org/VerificaSenha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:VerificaSenhaValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorLocal">
+      <soap12:operation soapAction="http://tempuri.org/ListarUsuariosPorLocal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListarUsuariosPorLocalValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorGrupo">
+      <soap12:operation soapAction="http://tempuri.org/ListarUsuariosPorGrupo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListarUsuariosPorGrupoValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorLocalTrabalho">
+      <soap12:operation soapAction="http://tempuri.org/ListarUsuariosPorLocalTrabalho" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListarUsuariosPorLocalTrabalhoValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstruturasExternasUsuarioPorIdPessoa">
+      <soap12:operation soapAction="http://tempuri.org/ListarEstruturasExternasUsuarioPorIdPessoa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListarEstruturasExternasUsuarioPorIdPessoaValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstruturasInternasUsuarioPorIdPessoa">
+      <soap12:operation soapAction="http://tempuri.org/ListarEstruturasInternasUsuarioPorIdPessoa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListarEstruturasInternasUsuarioPorIdPessoaValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuarioGrupo">
+      <soap12:operation soapAction="http://tempuri.org/InserirUsuarioGrupo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:InserirUsuarioGrupoValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelecionarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/SelecionarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SelecionarUsuarioValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelecionarUsuarioPorIdUsuario">
+      <soap12:operation soapAction="http://tempuri.org/SelecionarUsuarioPorIdUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SelecionarUsuarioPorIdUsuarioValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarLoginDisponivel">
+      <soap12:operation soapAction="http://tempuri.org/ListarLoginDisponivel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListarLoginDisponivelValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPermissaoUsuario">
+      <soap12:operation soapAction="http://tempuri.org/ListarPermissaoUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ListarPermissaoUsuarioValidationSoapHeader" part="ValidationSoapHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SecurityHttpGet" type="tns:SecurityHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Criptografar">
+      <http:operation location="/Criptografar" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirLocalUsuario">
+      <http:operation location="/InserirLocalUsuario" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Descriptografar">
+      <http:operation location="/Descriptografar" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenha">
+      <http:operation location="/AlterarSenha" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarUsuario">
+      <http:operation location="/AlterarUsuario" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarEstrutura">
+      <http:operation location="/AutorizarEstrutura" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarGrupo">
+      <http:operation location="/AutorizarGrupo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarEstrutura">
+      <http:operation location="/RetornarEstrutura" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BloquearUsuario">
+      <http:operation location="/BloquearUsuario" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirUsuario">
+      <http:operation location="/ExcluirUsuario" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GerarNovaSenha">
+      <http:operation location="/GerarNovaSenha" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuario">
+      <http:operation location="/InserirUsuario" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuarioParceiro">
+      <http:operation location="/InserirUsuarioParceiro" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarUsuarioParceiro">
+      <http:operation location="/AlterarUsuarioParceiro" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Autenticar">
+      <http:operation location="/Autenticar" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarGrupo">
+      <http:operation location="/RetornarGrupo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <http:operation location="/GetUserInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocaisUsuario">
+      <http:operation location="/GetLocaisUsuario" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUser">
+      <http:operation location="/IsUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaSenha">
+      <http:operation location="/VerificaSenha" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorLocal">
+      <http:operation location="/ListarUsuariosPorLocal" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorGrupo">
+      <http:operation location="/ListarUsuariosPorGrupo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorLocalTrabalho">
+      <http:operation location="/ListarUsuariosPorLocalTrabalho" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstruturasExternasUsuarioPorIdPessoa">
+      <http:operation location="/ListarEstruturasExternasUsuarioPorIdPessoa" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstruturasInternasUsuarioPorIdPessoa">
+      <http:operation location="/ListarEstruturasInternasUsuarioPorIdPessoa" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuarioGrupo">
+      <http:operation location="/InserirUsuarioGrupo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelecionarUsuario">
+      <http:operation location="/SelecionarUsuario" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelecionarUsuarioPorIdUsuario">
+      <http:operation location="/SelecionarUsuarioPorIdUsuario" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarLoginDisponivel">
+      <http:operation location="/ListarLoginDisponivel" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPermissaoUsuario">
+      <http:operation location="/ListarPermissaoUsuario" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SecurityHttpPost" type="tns:SecurityHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Criptografar">
+      <http:operation location="/Criptografar" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirLocalUsuario">
+      <http:operation location="/InserirLocalUsuario" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Descriptografar">
+      <http:operation location="/Descriptografar" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarSenha">
+      <http:operation location="/AlterarSenha" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarUsuario">
+      <http:operation location="/AlterarUsuario" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarEstrutura">
+      <http:operation location="/AutorizarEstrutura" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarGrupo">
+      <http:operation location="/AutorizarGrupo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarEstrutura">
+      <http:operation location="/RetornarEstrutura" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BloquearUsuario">
+      <http:operation location="/BloquearUsuario" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirUsuario">
+      <http:operation location="/ExcluirUsuario" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GerarNovaSenha">
+      <http:operation location="/GerarNovaSenha" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuario">
+      <http:operation location="/InserirUsuario" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuarioParceiro">
+      <http:operation location="/InserirUsuarioParceiro" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarUsuarioParceiro">
+      <http:operation location="/AlterarUsuarioParceiro" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Autenticar">
+      <http:operation location="/Autenticar" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarGrupo">
+      <http:operation location="/RetornarGrupo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <http:operation location="/GetUserInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocaisUsuario">
+      <http:operation location="/GetLocaisUsuario" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsUser">
+      <http:operation location="/IsUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificaSenha">
+      <http:operation location="/VerificaSenha" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorLocal">
+      <http:operation location="/ListarUsuariosPorLocal" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorGrupo">
+      <http:operation location="/ListarUsuariosPorGrupo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarUsuariosPorLocalTrabalho">
+      <http:operation location="/ListarUsuariosPorLocalTrabalho" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstruturasExternasUsuarioPorIdPessoa">
+      <http:operation location="/ListarEstruturasExternasUsuarioPorIdPessoa" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstruturasInternasUsuarioPorIdPessoa">
+      <http:operation location="/ListarEstruturasInternasUsuarioPorIdPessoa" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuarioGrupo">
+      <http:operation location="/InserirUsuarioGrupo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelecionarUsuario">
+      <http:operation location="/SelecionarUsuario" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelecionarUsuarioPorIdUsuario">
+      <http:operation location="/SelecionarUsuarioPorIdUsuario" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarLoginDisponivel">
+      <http:operation location="/ListarLoginDisponivel" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarPermissaoUsuario">
+      <http:operation location="/ListarPermissaoUsuario" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Security">
+    <wsdl:port name="SecuritySoap" binding="tns:SecuritySoap">
+      <soap:address location="http://spsvsis05/CASebrae_NovoSAC.WS/Security.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SecuritySoap12" binding="tns:SecuritySoap12">
+      <soap12:address location="http://spsvsis05/CASebrae_NovoSAC.WS/Security.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SecurityHttpGet" binding="tns:SecurityHttpGet">
+      <http:address location="http://spsvsis05/CASebrae_NovoSAC.WS/Security.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SecurityHttpPost" binding="tns:SecurityHttpPost">
+      <http:address location="http://spsvsis05/CASebrae_NovoSAC.WS/Security.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
