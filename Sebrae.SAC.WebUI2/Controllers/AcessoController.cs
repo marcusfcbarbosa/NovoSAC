@@ -35,10 +35,10 @@ namespace Sebrae.SAC.WebUI2.Controllers
                 string msgErro = String.Empty;
                 if (autenticacaoProvider.Autenticar(autenticacaoModel, out msgErro))
                 {
-                    if (String.IsNullOrEmpty(msgErro)) {
+                    //if (String.IsNullOrEmpty(msgErro)) {
                         FormsAuthentication.SetAuthCookie(autenticacaoModel.Login, false);
                         return Redirect(ReturnUrl ?? Url.Action("Default", "Home"));
-                    }
+                    //}
                 }
                 else {
                     TempData["Mensagem"] = "Falha de Autenticação";
