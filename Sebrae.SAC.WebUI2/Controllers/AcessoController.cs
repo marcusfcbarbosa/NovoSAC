@@ -14,11 +14,14 @@ namespace Sebrae.SAC.WebUI2.Controllers
 {
     public class AcessoController : Controller
     {
+
+        private IAutenticacaoProvider autenticacaoProvider;
+
         public AcessoController(IAutenticacaoProvider AutenticacaoProviderParam)
         {
             autenticacaoProvider = AutenticacaoProviderParam;
         }
-        private IAutenticacaoProvider autenticacaoProvider;
+        
         //
         // GET: /Login/
         public ActionResult Login()
