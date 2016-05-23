@@ -1,8 +1,8 @@
 ﻿using Autofac;
 using Autofac.Integration.Wcf;
-using Sebrae.SAC.Services.Injection;
+using SAC_.Services.Injection;
 
-namespace Sebrae.SAC.Services.App_Code
+namespace SAC_.Services.App_Code
 {
     public static class AppStart
     {

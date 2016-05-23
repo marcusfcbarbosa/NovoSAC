@@ -1,4 +1,4 @@
-﻿using Sebrae.SAC.Domain.Entities;
+﻿using SAC_.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
-namespace Sebrae.SAC.Services
+namespace SAC_.Services
 {
     [ServiceContract]
     public interface IEmpresaService

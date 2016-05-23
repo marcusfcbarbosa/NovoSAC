@@ -1,5 +1,5 @@
-﻿using Sebrae.SAC.Domain.Abstract;
-using Sebrae.SAC.Domain.Entities;
+﻿using SAC_.Domain.Abstract;
+using SAC_.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 
-namespace Sebrae.SAC.Services
+namespace SAC_.Services
 {
     public class EmpresaService : IEmpresaService
     {

@@ -1,12 +1,12 @@
 ﻿using Autofac;
-using Sebrae.SAC.Domain.Abstract;
-using Sebrae.SAC.Domain.Concrete;
+using SAC_.Domain.Abstract;
+using SAC_.Domain.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Sebrae.SAC.Services.Injection
+namespace SAC_.Services.Injection
 {
     public class AutofacModule : Module
     {
