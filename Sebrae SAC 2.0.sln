@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAC_.Domain", "Sebrae.SAC.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAC_.Services", "Sebrae.SAC.Services\SAC_.Services.csproj", "{A913FACE-12E2-43F5-8A75-E25D3C0A0BA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sebrae.SAC.Tests", "Sebrae.SAC.Tests\Sebrae.SAC.Tests.csproj", "{F437BBF1-D5EE-491A-BE38-EBD93543A9B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAC_.Tests", "Sebrae.SAC.Tests\SAC_.Tests.csproj", "{F437BBF1-D5EE-491A-BE38-EBD93543A9B5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sebrae.SAC.WebUI2", "Sebrae.SAC.WebUI2\Sebrae.SAC.WebUI2.csproj", "{3A3414DA-F6A3-4CF9-9892-6A17C3026AB6}"
 EndProject

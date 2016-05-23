@@ -1,13 +1,13 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
-using Sebrae.SAC.Domain.Abstract;
-using Sebrae.SAC.Domain.Concrete;
-using Sebrae.SAC.Domain.Entities;
+using SAC_.Domain.Abstract;
+using SAC_.Domain.Concrete;
+using SAC_.Domain.Entities;
 
 
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
-namespace Sebrae.SAC.Tests.Repositories
+namespace SAC_.Tests.Repositories
 {
     [TestClass]
     public class UsuarioRepositorioTest

@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sebrae.SAC.Tests.Repositories
+namespace SAC_.Tests.Repositories
 {
     public class LogHelper
     {
