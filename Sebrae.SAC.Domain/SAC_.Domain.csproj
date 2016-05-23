@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IEmpresaRepository.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IUsuarioRepositorio.cs" />
     <Compile Include="Concrete\LogHelper.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Entities\Dapper\SqlMapper.cs" />
     <Compile Include="Entities\Dapper\SqlMapperExtensions.cs" />
     <Compile Include="Entities\Dapper_DataObjects\Usuario.cs" />
+    <Compile Include="Entities\Empresa.cs" />
     <Compile Include="Entities\Parceiro.cs">
       <DependentUpon>SacAntigo.tt</DependentUpon>
     </Compile>

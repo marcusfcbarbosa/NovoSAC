@@ -11,22 +11,22 @@ namespace SAC_.Services
 {
     public class EmpresaService : IEmpresaService
     {
-        //private IEmpresaRepository empresaRepositorio;
+        private IEmpresaRepository empresaRepositorio;
 
-        //public EmpresaService(IEmpresaRepository empRepositorio)
-        //{
-        //    empresaRepositorio = empRepositorio;
-        //}
+        public EmpresaService(IEmpresaRepository empRepositorio)
+        {
+            empresaRepositorio = empRepositorio;
+        }
 
-        //public Empresa RetornaEmpresa(string idEmpresa)
-        //{
-        //    var e = empresaRepositorio.Retorna(Convert.ToInt32(idEmpresa));
-        //    return e;
-        //}
+        public Empresa RetornaEmpresa(string idEmpresa)
+        {
+            var e = empresaRepositorio.Retorna(Convert.ToInt32(idEmpresa));
+            return e;
+        }
 
-        //public List<Empresa> RetornaEmpresas()
-        //{
-        //    return empresaRepositorio.ListarTodos.ToList();
-        //}
+        public List<Empresa> RetornaEmpresas()
+        {
+            return empresaRepositorio.ListarTodos.ToList();
+        }
     }
 }
