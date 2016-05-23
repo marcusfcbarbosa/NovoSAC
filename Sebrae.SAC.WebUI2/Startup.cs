@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(Sebrae.SAC.WebUI2.Startup))]
-namespace Sebrae.SAC.WebUI2
+[assembly: OwinStartupAttribute(typeof(SAC_.WebUI2.Startup))]
+namespace SAC_.WebUI2
 {
     public partial class Startup
     {

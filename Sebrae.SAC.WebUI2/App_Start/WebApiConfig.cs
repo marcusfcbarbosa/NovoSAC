@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace Sebrae.SAC.WebUI2
+namespace SAC_.WebUI2
 {
     public static class WebApiConfig
     {

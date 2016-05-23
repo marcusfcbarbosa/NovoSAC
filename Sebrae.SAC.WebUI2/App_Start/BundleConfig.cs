@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Sebrae.SAC.WebUI2
+namespace SAC_.WebUI2
 {
     public class BundleConfig
     {

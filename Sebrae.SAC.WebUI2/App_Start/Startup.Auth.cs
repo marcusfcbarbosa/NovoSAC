@@ -3,7 +3,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
 
-namespace Sebrae.SAC.WebUI2
+namespace SAC_.WebUI2
 {
     public partial class Startup
     {

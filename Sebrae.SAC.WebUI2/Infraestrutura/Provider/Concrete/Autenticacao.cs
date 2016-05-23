@@ -2,36 +2,37 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Sebrae.SAC.WebUI2.Models;
-using Sebrae.SAC.WebUI2.Infraestrutura.Provider.Abstract;
-using Sebrae.SAC.WebUI2.CAS_Service_Teste;
+using SAC_.WebUI2.Models;
+using SAC_.WebUI2.Infraestrutura.Provider.Abstract;
+using WS = Sebrae.SAC.WebUI2.CAS_Service_Teste;
 using System.Configuration;
 using System.Security.Principal;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity;
 
-namespace Sebrae.SAC.WebUI2.Infraestrutura.Provider.Concrete
+namespace SAC_.WebUI2.Infraestrutura.Provider.Concrete
 {
     public class Autenticacao : IAutenticacaoProvider
     {
-        CAS_Service_Teste.SecuritySoapClient servico = new SecuritySoapClient();
+        //WS.SecuritySoapClient servico = new SecuritySoapClient();
+        WS.SecuritySoapClient servico = new WS.SecuritySoapClient();
         public bool Autenticar(AutenticacaoModel autenticacaoModel, out string msgErro)
         {
             try
             {
                 bool erro = false;
                 String MsgErro = String.Empty;
-                ValidationSoapHeader validation = new ValidationSoapHeader();
-                validation.Login = System.Configuration.ConfigurationManager.AppSettings["CAS_SEBRAE_LOGIN"];
-                validation.Password = System.Configuration.ConfigurationManager.AppSettings["CAS_SEBRAE_SENHA"];
-                var retorno = servico.Autenticar(validation, autenticacaoModel.Login.Replace(@"SP-SEBRAE\",""), autenticacaoModel.Senha);
+                WS.ValidationSoapHeader validation = new WS.ValidationSoapHeader();
+                validation.Login = System.Configuration.ConfigurationManager.AppSettings["CAS_LOGIN"];
+                validation.Password = System.Configuration.ConfigurationManager.AppSettings["CAS_SENHA"];
+                var retorno = servico.Autenticar(validation, autenticacaoModel.Login.Replace(@"SP-\",""), autenticacaoModel.Senha);
                 switch (retorno.Resultado)
                 {
-                    case CAS_Service_Teste.TiposResultadoExecucao.ExecucaoCompleta:
+                    case WS.TiposResultadoExecucao.ExecucaoCompleta:
                         retorno = servico.GetUserInfo(validation, Convert.ToString(retorno.Retorno), System.Configuration.ConfigurationManager.AppSettings["SISTEMA_AUTENTICADO_CAES"]);
-                        if (retorno.Resultado == CAS_Service_Teste.TiposResultadoExecucao.ExecucaoCompleta)
+                        if (retorno.Resultado == WS.TiposResultadoExecucao.ExecucaoCompleta)
                         {
-                            var DadosUsuario = (CAS_Service_Teste.XmlUsuarioInfo)retorno.Retorno;
+                            var DadosUsuario = (WS.XmlUsuarioInfo)retorno.Retorno;
                             AutenticacaoModel autenticaco = new AutenticacaoModel();
                             foreach (String grupo in DadosUsuario.GruposUsuario)
                             {
@@ -46,7 +47,7 @@ namespace Sebrae.SAC.WebUI2.Infraestrutura.Provider.Concrete
                                     IdLocalTipo = LocalTrabalho.IdLocalTipo
                                 });
                             }
-                            autenticaco.Login = autenticacaoModel.Login.Replace(@"SP-SEBRAE\", "");
+                            autenticaco.Login = autenticacaoModel.Login.Replace(@"SP\", "");
                             autenticaco.Codigo = DadosUsuario.Codigo;
                             autenticaco.CPF = DadosUsuario.CPF;
                             autenticaco.Email = DadosUsuario.Email;
@@ -116,10 +117,10 @@ namespace Sebrae.SAC.WebUI2.Infraestrutura.Provider.Concrete
 
         public bool RetornarEstrutura(string token, string chave)
         {
-            ValidationSoapHeader validation = new ValidationSoapHeader();
+            WS.ValidationSoapHeader validation = new WS.ValidationSoapHeader();
             validation.Login = System.Configuration.ConfigurationManager.AppSettings["CAS_SEBRAE_LOGIN"];
             validation.Password = System.Configuration.ConfigurationManager.AppSettings["CAS_SEBRAE_SENHA"];
-            var permissoes = (List<XmlPermissaoInfo>)servico.RetornarEstrutura(validation, token, chave).Retorno;
+            var permissoes = (List<WS.XmlPermissaoInfo>)servico.RetornarEstrutura(validation, token, chave).Retorno;
             if (permissoes.Count == 0)
             {
                 return false;

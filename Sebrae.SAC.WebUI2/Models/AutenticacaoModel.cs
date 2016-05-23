@@ -5,7 +5,7 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 
 
-namespace Sebrae.SAC.WebUI2.Models
+namespace SAC_.WebUI2.Models
 {
     public class AutenticacaoModel
     {

@@ -1,13 +1,13 @@
 ﻿using Ninject;
-using Sebrae.SAC.WebUI2.Infraestrutura.Provider.Abstract;
-using Sebrae.SAC.WebUI2.Infraestrutura.Provider.Concrete;
+using SAC_.WebUI2.Infraestrutura.Provider.Abstract;
+using SAC_.WebUI2.Infraestrutura.Provider.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Sebrae.SAC.WebUI2.Infraestrutura
+namespace SAC_.WebUI2.Infraestrutura
 {
     public class NinjectControllerFactory : DefaultControllerFactory
     {

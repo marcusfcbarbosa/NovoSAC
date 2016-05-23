@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Sebrae.SAC.WebUI2.Models;
+using SAC_.WebUI2.Models;
 using System.Web.SessionState;
-using Sebrae.SAC.WebUI2.Models;
-using Sebrae.SAC.WebUI2.Infraestrutura.Provider.Abstract;
+using SAC_.WebUI2.Models;
+using SAC_.WebUI2.Infraestrutura.Provider.Abstract;
 using System.Web.Security;
 
 
-namespace Sebrae.SAC.WebUI2.Controllers
+namespace SAC_.WebUI2.Controllers
 {
     public class AcessoController : Controller
     {

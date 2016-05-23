@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Sebrae.SAC.WebUI2.Controllers
+namespace SAC_.WebUI2.Controllers
 {
     public class CadastroController : Controller
     {

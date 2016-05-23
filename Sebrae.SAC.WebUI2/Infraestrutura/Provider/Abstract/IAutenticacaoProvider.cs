@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Sebrae.SAC.WebUI2.Models;
+using SAC_.WebUI2.Models;
 
-namespace Sebrae.SAC.WebUI2.Infraestrutura.Provider.Abstract
+namespace SAC_.WebUI2.Infraestrutura.Provider.Abstract
 {
     public interface IAutenticacaoProvider
     {
