@@ -23,7 +23,7 @@ namespace Sebrae.SAC.WebUI2.Controllers
         // GET: /Login/
         public ActionResult Login()
         {
-            ViewBag.Title = "NOVO ATENDIMENTO SEBRAE-SP";
+            ViewBag.Title = "ATENDIMENTO";
             return View();
         }
 

@@ -124,3 +124,7 @@ C:\Users\diogosp\Desktop\NovoSac\Sebrae.SAC.WebUI2\bin\Microsoft.Owin.Security.M
 C:\Users\diogosp\Desktop\NovoSac\Sebrae.SAC.WebUI2\obj\Debug\Sebrae.SAC.WebUI2.csprojResolveAssemblyReference.cache
 C:\Users\diogosp\Desktop\NovoSac\Sebrae.SAC.WebUI2\obj\Debug\Sebrae.SAC.WebUI2.dll
 C:\Users\diogosp\Desktop\NovoSac\Sebrae.SAC.WebUI2\obj\Debug\Sebrae.SAC.WebUI2.pdb
+C:\NovoSac\NovoSAC\Sebrae.SAC.WebUI2\bin\System.Web.Razor.dll
+C:\NovoSac\NovoSAC\Sebrae.SAC.WebUI2\bin\System.Web.Razor.xml
+C:\NovoSac\NovoSAC\Sebrae.SAC.WebUI2\bin\System.Web.WebPages.Razor.xml
+C:\NovoSac\NovoSAC\Sebrae.SAC.WebUI2\obj\Debug\Sebrae.SAC.WebUI2.pdb
