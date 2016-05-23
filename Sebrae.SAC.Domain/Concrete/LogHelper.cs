@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sebrae.SAC.Domain.Concrete
+namespace SAC_.Domain.Concrete
 {
     public class LogHelper
     {

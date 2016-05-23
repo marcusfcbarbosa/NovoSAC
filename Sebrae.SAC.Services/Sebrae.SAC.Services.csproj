@@ -99,9 +99,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sebrae.SAC.Domain\Sebrae.SAC.Domain.csproj">
+    <ProjectReference Include="..\Sebrae.SAC.Domain\SAC_.Domain.csproj">
       <Project>{bd3ec390-8b73-4582-88eb-7a00f8e4a126}</Project>
-      <Name>Sebrae.SAC.Domain</Name>
+      <Name>SAC_.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

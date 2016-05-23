@@ -1,4 +1,4 @@
-﻿using Sebrae.SAC.Domain.Abstract;
+﻿using SAC_.Domain.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 using Dapper;
 using System.Data.SqlClient;
 using System.Collections;
-using Sebrae.SAC.Domain.Entities;
-using Sebrae.SAC.Domain.Entities.Dapper;
-using Dapper_Objects = Sebrae.SAC.Domain.Entities.Dapper_DataObjects;
+using SAC_.Domain.Entities;
+using SAC_.Domain.Entities.Dapper;
+using Dapper_Objects = SAC_.Domain.Entities.Dapper_DataObjects;
 
 
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
 
-namespace Sebrae.SAC.Domain.Concrete
+namespace SAC_.Domain.Concrete
 {
     
     public class EFUsuarioRepositorio : Repository<Usuario>, IUsuarioRepositorio 

@@ -1,0 +1,17 @@
+C:\NovoSac\NovoSAC\Sebrae.SAC.Services\obj\Debug\SAC.Services.csprojResolveAssemblyReference.cache
+C:\NovoSac\NovoSAC\Sebrae.SAC.Services\obj\Debug\Sebrae.SAC.Services.dll
+C:\NovoSac\NovoSAC\Sebrae.SAC.Services\obj\Debug\Sebrae.SAC.Services.pdb
+C:\NovoSac\NovoSAC\Sebrae.SAC.Services\bin\App.config
+C:\NovoSac\NovoSAC\Sebrae.SAC.Services\bin\Sebrae.SAC.Services.dll.config
+C:\NovoSac\NovoSAC\Sebrae.SAC.Services\bin\Sebrae.SAC.Services.dll
+C:\NovoSac\NovoSAC\Sebrae.SAC.Services\bin\Sebrae.SAC.Services.pdb
+C:\NovoSac\NovoSAC\Sebrae.SAC.Services\bin\Autofac.dll
+C:\NovoSac\NovoSAC\Sebrae.SAC.Services\bin\Autofac.Integration.Wcf.dll
+C:\NovoSac\NovoSAC\Sebrae.SAC.Services\bin\log4net.dll
+C:\NovoSac\NovoSAC\Sebrae.SAC.Services\bin\Sebrae.SAC.Domain.dll
+C:\NovoSac\NovoSAC\Sebrae.SAC.Services\bin\EntityFramework.dll
+C:\NovoSac\NovoSAC\Sebrae.SAC.Services\bin\Sebrae.SAC.Domain.pdb
+C:\NovoSac\NovoSAC\Sebrae.SAC.Services\bin\Autofac.xml
+C:\NovoSac\NovoSAC\Sebrae.SAC.Services\bin\Autofac.Integration.Wcf.xml
+C:\NovoSac\NovoSAC\Sebrae.SAC.Services\bin\log4net.xml
+C:\NovoSac\NovoSAC\Sebrae.SAC.Services\bin\EntityFramework.xml

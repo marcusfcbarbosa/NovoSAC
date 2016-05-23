@@ -7,7 +7,7 @@ using System;
 using System.Configuration;
 using System.Data.SqlClient;
 
-namespace Sebrae.SAC.Domain.Entities
+namespace SAC_.Domain.Entities
 {
     class ConexaoCAS
     {

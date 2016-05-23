@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dapper.Contrib.Extensions;
 
-namespace Sebrae.SAC.Domain.Entities.Dapper_DataObjects
+namespace SAC_.Domain.Entities.Dapper_DataObjects
 {
     [Table("dbo.Usuario")]
     public class Usuario

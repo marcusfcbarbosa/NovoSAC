@@ -1,4 +1,4 @@
-﻿using Sebrae.SAC.Domain.Entities;
+﻿using SAC_.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sebrae.SAC.Domain.Concrete
+namespace SAC_.Domain.Concrete
 {
     public class SacContext : DbContext
     {

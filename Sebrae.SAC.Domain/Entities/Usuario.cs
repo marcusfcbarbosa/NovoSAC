@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sebrae.SAC.Domain.Entities
+namespace SAC_.Domain.Entities
 {
     /// <summary>
     /// Entidade que faz referencia a tabela de usuario do CAS para poder logar no Sistema

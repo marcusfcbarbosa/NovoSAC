@@ -9,7 +9,7 @@ using System.Data;
 using Dapper;
 
 
-namespace Sebrae.SAC.Domain.Entities.Dapper
+namespace SAC_.Domain.Entities.Dapper
 {
     public class DapperContext : IDisposable
     {

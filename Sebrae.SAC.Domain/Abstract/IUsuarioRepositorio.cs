@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Sebrae.SAC.Domain.Entities;
+using SAC_.Domain.Entities;
 
-namespace Sebrae.SAC.Domain.Abstract
+namespace SAC_.Domain.Abstract
 {
     public interface IUsuarioRepositorio
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sebrae.SAC.Domain.Abstract
+namespace SAC_.Domain.Abstract
 {
     public interface IRepository<TEntity> where TEntity : class
     {

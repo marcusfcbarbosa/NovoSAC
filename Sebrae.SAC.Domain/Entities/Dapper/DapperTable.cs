@@ -8,7 +8,7 @@ using System.Data;
 using System.Configuration;
 using Dapper;
 
-namespace Sebrae.SAC.Domain.Entities.Dapper
+namespace SAC_.Domain.Entities.Dapper
 {
     public class DapperTable<T> : IDisposable
     {

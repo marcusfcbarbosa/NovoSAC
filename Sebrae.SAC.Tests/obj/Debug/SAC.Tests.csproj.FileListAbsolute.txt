@@ -1,0 +1,15 @@
+C:\NovoSac\NovoSAC\Sebrae.SAC.Tests\bin\Debug\App.config
+C:\NovoSac\NovoSAC\Sebrae.SAC.Tests\bin\Debug\Sebrae.SAC.Tests.dll.config
+C:\NovoSac\NovoSAC\Sebrae.SAC.Tests\bin\Debug\Sebrae.SAC.Tests.dll
+C:\NovoSac\NovoSAC\Sebrae.SAC.Tests\bin\Debug\Sebrae.SAC.Tests.pdb
+C:\NovoSac\NovoSAC\Sebrae.SAC.Tests\bin\Debug\EntityFramework.dll
+C:\NovoSac\NovoSAC\Sebrae.SAC.Tests\bin\Debug\EntityFramework.SqlServer.dll
+C:\NovoSac\NovoSAC\Sebrae.SAC.Tests\bin\Debug\log4net.dll
+C:\NovoSac\NovoSAC\Sebrae.SAC.Tests\bin\Debug\Sebrae.SAC.Domain.dll
+C:\NovoSac\NovoSAC\Sebrae.SAC.Tests\bin\Debug\Sebrae.SAC.Domain.pdb
+C:\NovoSac\NovoSAC\Sebrae.SAC.Tests\bin\Debug\EntityFramework.xml
+C:\NovoSac\NovoSAC\Sebrae.SAC.Tests\bin\Debug\EntityFramework.SqlServer.xml
+C:\NovoSac\NovoSAC\Sebrae.SAC.Tests\bin\Debug\log4net.xml
+C:\NovoSac\NovoSAC\Sebrae.SAC.Tests\obj\Debug\SAC.Tests.csprojResolveAssemblyReference.cache
+C:\NovoSac\NovoSAC\Sebrae.SAC.Tests\obj\Debug\Sebrae.SAC.Tests.dll
+C:\NovoSac\NovoSAC\Sebrae.SAC.Tests\obj\Debug\Sebrae.SAC.Tests.pdb
