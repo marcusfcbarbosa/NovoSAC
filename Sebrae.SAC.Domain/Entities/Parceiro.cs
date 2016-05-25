@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sebrae.SAC.Domain.Entities
+namespace SAC_.Domain.Entities
 {
     using System;
     using System.Collections.Generic;

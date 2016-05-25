@@ -7,8 +7,8 @@
     <ProjectGuid>{BD3EC390-8B73-4582-88EB-7A00F8E4A126}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sebrae.SAC.Domain</RootNamespace>
-    <AssemblyName>Sebrae.SAC.Domain</AssemblyName>
+    <RootNamespace>SAC_.Domain</RootNamespace>
+    <AssemblyName>SAC_.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <PublishUrl>publish\</PublishUrl>

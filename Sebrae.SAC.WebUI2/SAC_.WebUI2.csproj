@@ -381,6 +381,7 @@
     <None Include="Service References\CAS_Service_Teste\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
