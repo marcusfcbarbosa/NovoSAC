@@ -110,6 +110,7 @@
   <ItemGroup>
     <None Include="App.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <EntityDeploy Include="Entities\SacAntigo.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

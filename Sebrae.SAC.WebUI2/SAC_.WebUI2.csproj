@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sebrae.SAC.WebUI2</RootNamespace>
-    <AssemblyName>Sebrae.SAC.WebUI2</AssemblyName>
+    <RootNamespace>SAC_.WebUI2</RootNamespace>
+    <AssemblyName>SAC_.WebUI2</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -282,97 +282,97 @@
     <Content Include="Scripts\libs\form\select2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <None Include="Scripts\_references.js" />
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.AlterarSenhaResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.AlterarSenhaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.AlterarUsuarioParceiroResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.AlterarUsuarioParceiroResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.AlterarUsuarioResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.AlterarUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.AutenticarResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.AutenticarResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.AutorizarEstruturaResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.AutorizarEstruturaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.AutorizarGrupoResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.AutorizarGrupoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.BloquearUsuarioResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.BloquearUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.CriptografarResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.CriptografarResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.DescriptografarResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.DescriptografarResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.ExcluirUsuarioResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.ExcluirUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.GerarNovaSenhaResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.GerarNovaSenhaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.GetLocaisUsuarioResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.GetLocaisUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.GetUserInfoResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.GetUserInfoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.InserirLocalUsuarioResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.InserirLocalUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.InserirUsuarioGrupoResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.InserirUsuarioGrupoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.InserirUsuarioParceiroResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.InserirUsuarioParceiroResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.InserirUsuarioResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.InserirUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.IsUserResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.IsUserResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.ListarEstruturasExternasUsuarioPorIdPessoaResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.ListarEstruturasExternasUsuarioPorIdPessoaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.ListarEstruturasInternasUsuarioPorIdPessoaResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.ListarEstruturasInternasUsuarioPorIdPessoaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.ListarLoginDisponivelResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.ListarLoginDisponivelResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.ListarPermissaoUsuarioResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.ListarPermissaoUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.ListarUsuariosPorGrupoResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.ListarUsuariosPorGrupoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.ListarUsuariosPorLocalResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.ListarUsuariosPorLocalResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.ListarUsuariosPorLocalTrabalhoResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.ListarUsuariosPorLocalTrabalhoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.ResultadoExecucaoRetornoEstrutura.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.ResultadoExecucaoRetornoEstrutura.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.RetornarEstruturaResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.RetornarEstruturaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.RetornarGrupoResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.RetornarGrupoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.SelecionarUsuarioPorIdUsuarioResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.SelecionarUsuarioPorIdUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.SelecionarUsuarioResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.SelecionarUsuarioResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\CAS_Service_Teste\Sebrae.SAC.WebUI2.CAS_Service_Teste.VerificaSenhaResponse.datasource">
+    <Content Include="Service References\CAS_Service_Teste\SAC_.WebUI2.CAS_Service_Teste.VerificaSenhaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\CAS_Service_Teste\Security.disco" />
