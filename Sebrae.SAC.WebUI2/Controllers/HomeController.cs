@@ -13,5 +13,11 @@ namespace SAC_.WebUI2.Controllers
             return View();
         }
 
+        public ActionResult Sair()
+        {
+            return Redirect(Url.Action("Sair", "Acesso"));
+        }
+
+
     }
 }
